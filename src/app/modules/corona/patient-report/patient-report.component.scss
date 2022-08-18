@@ -1,0 +1,24 @@
+table, th, td {
+    border:1px solid black;
+    background-color: #e9e5ff;
+}
+table{
+    width: 60vw;
+    margin: 10px;
+}
+button{
+    font-size: 20px;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 18px;
+    border: #7b67de 2px solid;
+}
+input{
+    border: 2px #7b67de solid;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px;
+}
+#deleteLocation{
+    cursor: pointer;
+}

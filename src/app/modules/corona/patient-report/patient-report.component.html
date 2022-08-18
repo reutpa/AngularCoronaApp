@@ -1,0 +1,31 @@
+<div>
+    <a class="link" routerLink="/main">Main Menu</a><br>
+    <h1>Report Your Path</h1>
+    <form [formGroup]="locationForm">
+        <input type="text" placeholder="Patient ID" required id="patientId" name="patientId" formControlName="patientId" #patientId
+        (ngModelChange)="changePatient()" />
+        <table>
+            <tr>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>City</th>
+                <th>Location</th>
+                <th>   </th>
+            </tr>
+            <tr *ngFor="let location of locationsArr">
+                <td>{{location.startDate | date:'dd-MMM-yy h:mm a'}}</td>
+                <td>{{location.endDate| date:'dd-MMM-yy h:mm a'}}</td>
+                <td>{{location.city}}</td>
+                <td>{{location.adress}}</td>
+                <td id="deleteLocation"(click)="deleteLocation(location.id)">🗑</td>
+            </tr>
+        </table>
+        <div>
+            <input id="startDate" placeholder="Start Date" type="datetime-local" formControlName="startDate">
+            <input id="endDate" placeholder="End Date" type="datetime-local" formControlName="endDate">
+            <input id="city" placeholder="city" type="text" formControlName="city">
+            <input id="location" placeholder="location" type="text"formControlName="adress">
+        </div>
+        <button id="add" [disabled]="locationForm.invalid" (click)="addLocation()">Add</button>
+    </form>
+</div>
